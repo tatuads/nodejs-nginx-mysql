@@ -14,7 +14,7 @@ services:
       build:
         context: ./node
         dockerfile: Dockerfile
-      # entrypoint: wait-for database:3306 -t 15
+      entrypoint: dockerize -wait tcp://db:3306 -timeout 20s ./start.sh
       container_name: App
       ports:
         - '3000:3000'
