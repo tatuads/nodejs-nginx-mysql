@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN chmod +x start.sh
+
 RUN apt-get update && \ 
     apt-get install -y wget
 
